@@ -144,7 +144,7 @@ class ArticleServiceTest {
     void givenArticleInfo_whenSavingArticle_thenSavesArticle() {
         // Given
         ArticleDto dto = createArticleDto();
-        given(userAccountRepository.getReferenceById(dto.userAccountDto().id()))
+        given(userAccountRepository.getReferenceById(dto.userAccountDto().userId()))
                 .willReturn(createUserAccount());
         given(articleRepository.save(any(Article.class)))
                 .willReturn(createArticle());
@@ -153,7 +153,7 @@ class ArticleServiceTest {
         sut.saveArticle(dto);
 
         // Then
-        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().id());
+        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
         then(articleRepository).should().save(any(Article.class));
     }
 
@@ -280,7 +280,7 @@ class ArticleServiceTest {
 
     private UserAccount createUserAccount() {
         return UserAccount.of(
-                "test",
+                "userId",
                 "password",
                 "tset@email.com",
                 "test",
@@ -320,8 +320,7 @@ class ArticleServiceTest {
 
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
-                1L,
-                "test",
+                "userId",
                 "password",
                 "test@mail.com",
                 "test",
