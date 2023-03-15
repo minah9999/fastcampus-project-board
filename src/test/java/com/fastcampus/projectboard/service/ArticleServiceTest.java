@@ -144,7 +144,7 @@ class ArticleServiceTest {
     void givenArticleInfo_whenSavingArticle_thenSavesArticle() {
         // Given
         ArticleDto dto = createArticleDto();
-        given(userAccountRepository.getReferenceById(dto.userAccountDto().userId()))
+        given(userAccountRepository.getReferenceById(dto.userAccountDto().id()))
                 .willReturn(createUserAccount());
         given(articleRepository.save(any(Article.class)))
                 .willReturn(createArticle());
@@ -153,7 +153,7 @@ class ArticleServiceTest {
         sut.saveArticle(dto);
 
         // Then
-        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
+        then(userAccountRepository).should().getReferenceById(dto.userAccountDto().id());
         then(articleRepository).should().save(any(Article.class));
     }
 
