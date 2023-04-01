@@ -3,7 +3,6 @@ package com.fastcampus.projectboard.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.apache.catalina.User;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
