@@ -30,9 +30,12 @@ public class Article extends AuditingFields{
     private UserAccount userAccount; // 유저 정보 (ID)
 
 
-    @Setter @Column(nullable = false)
+    @Setter
+    @Column(nullable = false)
     private String title; //제목
-    @Setter @Column(nullable = false, length = 10000)
+
+    @Setter
+    @Column(nullable = false, length = 10000)
     private String content; //본문
 
     @Setter
