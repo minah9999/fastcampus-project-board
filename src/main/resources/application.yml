@@ -9,10 +9,10 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/board
-    username: minah
-    password: Password!
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/board
+    username: postgres
+    password: password!
+#    driver-class-name: org.postgresql.Driver
   jpa:
     defer-datasource-initialization: true #테스트용 디비 초기값 세팅과 관련
     hibernate.ddl-auto: create
