@@ -9,9 +9,9 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/board
-    username: postgres
-    password: password!
+    url: ${LOCAL_DB_URL}
+    username: ${LOCAL_DB_USERNAME}
+    password: ${LOCAL_DB_PASSWORD}
 #    driver-class-name: org.postgresql.Driver
   jpa:
     defer-datasource-initialization: true #테스트용 디비 초기값 세팅과 관련
