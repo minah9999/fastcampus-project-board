@@ -341,7 +341,7 @@ class ArticleControllerTest {
     void givenArticleIdToDelete_whenRequesting_thenDeletesArticle() throws Exception {
         // Given
         Long articleId = 1L;
-        String userId = "testId";
+        String userId = "unoTest";
         willDoNothing().given(articleService).deleteArticle(articleId, userId);
 
         // When & Then
